@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace orientacaoAObjetos.Bytebank.Funcionarios
 {
-    public class Diretor : Funcionario
+    public class Auxiliar : Funcionario
     {
-        public Diretor(string nome, string cpf) : base(nome, cpf)
+        public Auxiliar(string Nome, string Cpf) : base(Nome, Cpf)
         {
-            this.Salario = 5000;
+            this.Salario = 2000;
         }
         public override double getBonificacao()
         {
-            return this.Salario * 0.50;
+            return this.Salario * 0.20;
         }
         public override void aumentarSalario()
         {
-            this.Salario *= 0.15;
+            this.Salario *= 0.10;
         }
     }
 }

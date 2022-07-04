@@ -7,18 +7,27 @@ class teste
 
     static void Main(string[] args)
     {
-        Funcionario victor = new Funcionario("Victor Vieira", "043.435.435-98", 2000);
-        Funcionario vieira = new Diretor("Vieira Victor", "343.754.543-87", 3000);
-        GerenciadorDeBonificacoes gerenciador = new GerenciadorDeBonificacoes();
-        Console.WriteLine("VICTOR: " + victor.getBonificacao());
-        Console.WriteLine("VIEIRA: " + vieira.getBonificacao());
-        gerenciador.registrar(victor);
-        gerenciador.registrar(vieira);
-        Console.WriteLine("TOTAL DE BONIFICACOES: " + gerenciador.getBonificacao());
-        Console.WriteLine("QUANTIDADE DE FUNCIONARIOS: " + Funcionario.getQuantidadeDeFuncionarios());
+        Funcionario jose = new Designer("José Santos", "654.988.979-86");
+        Funcionario victor = new Auxiliar("Victor Vieira", "043.435.435-98");
+        Funcionario santos = new GerenteDeContas("Santos José", "455.776.565-53");
+        Funcionario vieira = new Diretor("Vieira Victor", "343.754.543-87");
+        Funcionario joseVictor = new Desenvolvedor("José Victor Santos Vieira", "535.564.434-54");
 
-        Console.WriteLine("ANTIGO SALARIO VICTOR: " + victor.getSalario());
-        victor.aumentarSalario();
-        Console.WriteLine("NOVO SALARIO VICTOR: " + victor.getSalario());
+        GerenciadorDeBonificacoes gerenciador = new GerenciadorDeBonificacoes();
+
+        gerenciador.registrar(jose);
+        gerenciador.registrar(victor);
+        gerenciador.registrar(santos);
+        gerenciador.registrar(vieira);
+        gerenciador.registrar(joseVictor);
+
+        Console.WriteLine("BONIFICACAO JOSÉ\t: " + jose.getBonificacao());
+        Console.WriteLine("BONIFICACAO VICTOR\t: " + victor.getBonificacao());
+        Console.WriteLine("BONIFICACAO SANTOS\t: " + santos.getBonificacao());
+        Console.WriteLine("BONIFICACAO VIEIRA\t: " + vieira.getBonificacao());
+
+        Console.WriteLine("\nTOTAL DE BONIFICACOES\t: " + gerenciador.getBonificacao());
+        Console.WriteLine("QTN DE FUNCIONARIOS\t: " + Funcionario.getQuantidadeDeFuncionarios());
+
     }
 }
